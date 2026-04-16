@@ -14,7 +14,7 @@ const allDeps = Object.keys(pkg.dependencies || {});
 
 const isDev = process.env.NODE_ENV !== 'production';
 
-const configHorizonsViteErrorHandler = `
+const configAppViteErrorHandler = `
 const observer = new MutationObserver((mutations) => {
 	for (const mutation of mutations) {
 		for (const addedNode of mutation.addedNodes) {
@@ -54,14 +54,14 @@ function handleViteOverlay(node) {
 		const error = messageText + (fileText ? ' File:' + fileText : '');
 
 		window.parent.postMessage({
-			type: 'horizons-vite-error',
+			type: 'app-vite-error',
 			error,
 		}, '*');
 	}
 }
 `;
 
-const configHorizonsRuntimeErrorHandler = `
+const configAppRuntimeErrorHandler = `
 window.onerror = (message, source, lineno, colno, errorObj) => {
 	const errorDetails = errorObj ? JSON.stringify({
 		name: errorObj.name,
@@ -73,14 +73,14 @@ window.onerror = (message, source, lineno, colno, errorObj) => {
 	}) : null;
 
 	window.parent.postMessage({
-		type: 'horizons-runtime-error',
+		type: 'app-runtime-error',
 		message,
 		error: errorDetails
 	}, '*');
 };
 `;
 
-const configHorizonsConsoleErrorHandler = `
+const configAppConsoleErrorHandler = `
 const originalConsoleError = console.error;
 const MATCH_LINE_COL_REGEX = /:(\\d+):(\\d+)\\)?\\s*$/; // regex to match the :lineNum:colNum
 const MATCH_AT_REGEX = /^\\s*at\\s+(?:async\\s+)?(?:.*?\\s+)?\\(?/; // regex to remove the 'at' keyword and any 'async' or function name
@@ -145,7 +145,7 @@ console.error = function(...args) {
 	}
 
 	window.parent.postMessage({
-		type: 'horizons-console-error',
+		type: 'app-console-error',
 		error: errorString
 	}, '*');
 };
@@ -208,7 +208,7 @@ if (window.navigation && window.self !== window.top) {
 		}
 
 		window.parent.postMessage({
-			type: 'horizons-navigation-error',
+			type: 'app-navigation-error',
 			url,
 		}, '*');
 	});
@@ -222,19 +222,19 @@ const addTransformIndexHtml = {
 			{
 				tag: 'script',
 				attrs: { type: 'module' },
-				children: configHorizonsRuntimeErrorHandler,
+				children: configAppRuntimeErrorHandler,
 				injectTo: 'head',
 			},
 			{
 				tag: 'script',
 				attrs: { type: 'module' },
-				children: configHorizonsViteErrorHandler,
+				children: configAppViteErrorHandler,
 				injectTo: 'head',
 			},
 			{
 				tag: 'script',
 				attrs: { type: 'module' },
-				children: configHorizonsConsoleErrorHandler,
+				children: configAppConsoleErrorHandler,
 				injectTo: 'head',
 			},
 			{
