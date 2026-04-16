@@ -152,10 +152,10 @@ function HeroSection() {
             <div className="relative">
               <div className="absolute inset-0 bg-accent/20 rounded-2xl blur-3xl"></div>
               <img
-                src="https://images.unsplash.com/photo-1659353219716-699803846194"
+                src="/krezia-main.jpg"
                 alt="Professional portrait of Krezia Mica Musni, Process and Quality Engineer"
                 loading="lazy"
-                className="relative rounded-2xl shadow-2xl w-full h-auto aspect-[3/4] object-cover"
+                className="relative rounded-2xl shadow-2xl w-full h-auto aspect-[3/4] object-cover object-[center_18%] md:object-center"
               />
             </div>
           </motion.div>
