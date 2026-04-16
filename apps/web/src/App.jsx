@@ -12,6 +12,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
+import IndustriesSection from '@/components/IndustriesSection';
 
 // Animation variants for scroll-triggered effects
 const fadeInUp = {
@@ -68,7 +69,7 @@ function Navigation() {
       setScrolled(window.scrollY > 50);
 
       // Update active section based on scroll position
-      const sections = ['hero', 'profile', 'experience', 'skills', 'education', 'contact'];
+      const sections = ['hero', 'profile', 'experience', 'industries', 'skills', 'education', 'contact'];
       const current = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -88,6 +89,7 @@ function Navigation() {
     { id: 'hero', label: 'Home' },
     { id: 'profile', label: 'Profile' },
     { id: 'experience', label: 'Experience' },
+    { id: 'industries', label: 'Industries' },
     { id: 'skills', label: 'Skills' },
     { id: 'education', label: 'Education' },
     { id: 'contact', label: 'Contact' }
@@ -181,7 +183,7 @@ function HeroSection() {
               </h2>
               
               <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                11+ Years of International Excellence in Industrial Systems & Quality Management
+                10+ Years of International Excellence in Industrial Systems & Quality Management
               </p>
             </div>
 
@@ -255,12 +257,8 @@ function ProfileSection() {
             <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300">
               <CardContent className="pt-6">
                 <p className="text-lg leading-relaxed text-center max-w-3xl mx-auto">
-                  A results-driven Process & Quality Engineer with over 11 years of international 
-                  experience in industrial systems, quality management, and operational excellence. 
-                  Specializing in Lean Six Sigma methodologies, ISO standards implementation, and 
-                  cross-functional team leadership across manufacturing and service industries. 
-                  Proven track record in driving process optimization, reducing defects, and 
-                  implementing sustainable quality improvements in diverse cultural environments.
+                  Results-driven Process & Quality Engineer with over 10 years of international 
+                  experience in process improvement, quality management, and business operations across manufacturing, financial services, and technology industries. Certified Lean Six Sigma Green Belt with a proven track record of applying DMAIC methodology to drive efficiency, standardisation, and continuous improvement. Currently based in Göteborg, Sweden, with extensive experience in cross-functional collaboration within multicultural and global environments.
                 </p>
               </CardContent>
             </Card>
@@ -271,7 +269,7 @@ function ProfileSection() {
             className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8"
           >
             {[
-              { icon: TrendingUp, label: 'Process Optimization', value: '11+ Years' },
+              { icon: TrendingUp, label: 'Process Optimization', value: '10+ Years' },
               { icon: Target, label: 'Quality Systems', value: 'ISO 9001/14001' },
               { icon: BarChart3, label: 'Continuous Improvement', value: 'Lean Six Sigma' }
             ].map((stat, index) => (
@@ -300,42 +298,42 @@ function ExperienceSection() {
   const experiences = [
     {
       role: 'Process & Quality Consultant',
-      company: 'Geely Europe Innovation',
+      company: 'Geely Europe Innovation and Collaboration AB',
       location: 'Göteborg, Sweden',
-      period: 'Current',
-      description: 'Leading quality assurance initiatives and process improvement projects for European automotive innovation center. Implementing Lean Six Sigma methodologies and ISO compliance frameworks.',
+      period: 'Oct 2025 – Present',
+      description: 'Led process and quality improvement initiatives across shared service functions, including HR, IT, and Finance. Developed a Document Management System (DMS) framework and supported QMS, EMS, and ISMS-related activities through structured documentation, governance practices, and process standardization. Designed and improved end-to-end processes to enhance accountability, service consistency, and process clarity. Mapped detailed process activities and developed process KPI structures to improve performance visibility, governance, and documentation quality. Supported SAP S/4HANA-related improvement initiatives, including dunning and order management, through requirements gathering and stakeholder alignment. Supported customer-facing and cross-functional improvement initiatives by acting as a key liaison between business users, operational teams, and stakeholders.',
       current: true
     },
     {
-      role: 'Quality Systems Engineer',
+      role: 'Business Process Analyst (Remote Independent Contractor)',
       company: 'Swooc Games',
-      location: 'USA (Remote)',
-      period: '2021-2023',
-      description: 'Established quality assurance protocols and process documentation for gaming software development. Implemented FMEA and 8D problem-solving methodologies.',
+      location: 'Florida, USA',
+      period: 'Jun 2022 – Mar 2024',
+      description: 'Overhauled the company\'s key process documentation and overall organization of processes via Asana, Slab, SOPs, and LucidChart as part of delivering high-quality solutions and driving continuous improvement. Worked closely with remote personnel and internal stakeholders from different time zones and multicultural backgrounds exhibiting flexibility and effectiveness in a global remote setup. Developed project plans and process improvements which contributed directly to increasing the efficiency of the company\'s business processes. Acted as point person for presentation and coordination of process improvement solutions for staff and internal stakeholders. Proactively used the DMAIC process principles as a standard for process initiatives.',
       current: false
     },
     {
-      role: 'Senior Process Analyst',
-      company: 'Wells Fargo',
+      role: 'Process Engineer – Business Process Management Department',
+      company: 'Wells Fargo Philippines',
       location: 'Philippines',
-      period: '2017-2021',
-      description: 'Managed process optimization projects in financial services operations. Led cross-functional teams in implementing Six Sigma DMAIC projects achieving 23% efficiency improvement.',
+      period: 'Jan 2021 – Jun 2022',
+      description: 'Applied foundational process engineering tools such as SIPOC, Customer Focus, Lean/Six Sigma principles, Process Mapping, and Fishbone diagrams to enhance processes for teams, departments, and business units. Maintained a consistent First Time Right status with 100% accuracy on all assigned change requests while supporting multiple onshore/offshore teams simultaneously. Collaborated with multicultural teams and business subject matter experts in India and USA while maintaining high SLA on all change requests output. Heavily involved in gathering process requirements, identifying gaps and efficiency opportunities, and creating recommendations based on analyses and process improvement ideas. Utilized iGrafx and OpenText in creating and documenting procedures, changes in process flow and attributes.',
       current: false
     },
     {
-      role: 'Quality Assurance Specialist',
+      role: 'Systems Officer – Restaurant Systems Department',
       company: 'Jollibee Foods Corporation',
       location: 'Philippines',
-      period: '2014-2017',
-      description: 'Implemented ISO 9001:2015 and HACCP quality management systems. Conducted internal audits and supplier quality assessments across food manufacturing facilities.',
+      period: 'Jun 2019 – Sept 2020',
+      description: 'Spearheaded the Greenwich systemwide store Restaurant Operating System completion from 56% to 100%. Project lead of electronic shift management that reduced around 70% the Takt time of admin tasks. Led the planning and implementation of Covid-19 safety measures and guidelines coordinated with all Greenwich stores nationwide. Responsible for the full lifecycle of new systems: evaluation of emerging customer service models, pilot tests, post-implementation evaluations, and system-wide implementation. Maintained detailed project plans and documentation of policies and procedures for implemented systems.',
       current: false
     },
     {
-      role: 'Industrial Engineer',
-      company: 'Toshiba',
+      role: 'Quality Assurance Engineer – Mobile Quality, SSD & PCB QA Department',
+      company: 'Toshiba Information Equipment (PH), Inc.',
       location: 'Philippines',
-      period: '2012-2014',
-      description: 'Participated in manufacturing process design and optimization. Applied Lean manufacturing principles to reduce waste and improve production efficiency.',
+      period: 'Jun 2015 – Feb 2019',
+      description: 'Ensured all work processes comply with ISO9001:2000, SA8000, and ISO14001; regularly participated in 5S activities and OHSA programs. Oversaw product qualifications and process changes including 5M1E according to quality standards. Spearheaded the 8D analysis for quality claims and investigation of in-line quality issues. Conducted Process Quality Checks including manufacturing compliance, contamination process, ESD process, and SOP/work procedure checks. Supervised defect analysis during inspection to identify and prevent NG units from continuing to the next process.',
       current: false
     }
   ];
@@ -434,11 +432,13 @@ function SkillsSection() {
 
   const softwareSkills = [
     { name: 'Jira', icon: Settings },
-    { name: 'iGrafx Process', icon: Code },
-    { name: 'SAP S/4HANA', icon: Database },
+    { name: 'iGrafx', icon: Code },
+    { name: 'OpenText', icon: Database },
+    { name: 'Confluence', icon: FileText },
+    { name: 'Trello', icon: BarChart3 },
+    { name: 'SharePoint', icon: TrendingUp },
     { name: 'Spotfire DXP', icon: BarChart3 },
-    { name: 'Minitab', icon: TrendingUp },
-    { name: 'MS Project', icon: FileText }
+    { name: 'SAP S/4HANA', icon: Database }
   ];
 
   return (
@@ -527,7 +527,7 @@ function EducationSection() {
       degree: 'Bachelor of Science in Industrial Engineering',
       institution: 'Polytechnic University of the Philippines',
       location: 'Manila, Philippines',
-      year: '2008-2012',
+      year: '2010-2015',
       icon: GraduationCap
     },
     {
@@ -702,10 +702,10 @@ function App() {
   return (
     <>
       <Helmet>
-        <title>Krezia Mica Musni | Process & Quality Engineer | 11+ Years Experience</title>
+        <title>Krezia Mica Musni | Process & Quality Engineer | 10+ Years Experience</title>
         <meta 
           name="description" 
-          content="Professional portfolio of Krezia Mica Musni - Certified Lean Six Sigma Green Belt with 11+ years of international experience in process optimization, quality management, and industrial engineering across Europe and Asia."
+          content="Professional portfolio of Krezia Mica Musni - Certified Lean Six Sigma Green Belt with 10+ years of international experience in process optimization, quality management, and industrial engineering across Europe and Asia."
         />
       </Helmet>
 
@@ -715,6 +715,7 @@ function App() {
           <HeroSection />
           <ProfileSection />
           <ExperienceSection />
+          <IndustriesSection />
           <SkillsSection />
           <EducationSection />
           <ContactFooter />
