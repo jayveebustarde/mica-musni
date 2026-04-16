@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core Scandinavian Palette */
+    --background: 222 47% 11%; /* #0F172A - Slate 900 */
+    --foreground: 0 0% 98%; /* Near white */
+    
+    /* Semantic Colors */
+    --primary: 199 89% 60%; /* #38BDF8 - Sky Blue accent */
+    --primary-foreground: 222 47% 11%;
+    
+    --secondary: 214 17% 65%; /* #94A3B8 - Secondary text */
+    --secondary-foreground: 0 0% 98%;
+    
+    --muted: 222 35% 18%; /* Slightly lighter than background */
+    --muted-foreground: 214 17% 65%;
+    
+    --accent: 199 89% 60%; /* Sky Blue */
+    --accent-foreground: 222 47% 11%;
+    
+    --card: 222 35% 15%;
+    --card-foreground: 0 0% 98%;
+    
+    --border: 222 35% 25%;
+    --input: 222 35% 25%;
+    --ring: 199 89% 60%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --popover: 222 35% 15%;
+    --popover-foreground: 0 0% 98%;
+    
+    --radius: 0.75rem;
+    
+    /* Gold accent for certifications */
+    --gold: 45 93% 58%;
+    
+    /* Sidebar tokens */
+    --sidebar-background: 222 47% 11%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 199 89% 60%;
+    --sidebar-primary-foreground: 222 47% 11%;
+    --sidebar-accent: 222 35% 18%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 222 35% 25%;
+    --sidebar-ring: 199 89% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-feature-settings: "kern" 1, "liga" 1;
+    line-height: 1.7;
+    letter-spacing: 0.01em;
+    overflow-x: clip;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+  
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold;
+  }
+  
+  h3 {
+    @apply text-2xl md:text-3xl font-semibold;
+  }
+  
+  h4 {
+    @apply text-xl md:text-2xl font-semibold;
+  }
+  
+  p {
+    @apply leading-relaxed max-w-prose;
+  }
+  
+  input, textarea, select {
+    @apply text-foreground;
+  }
+  
+  ::placeholder {
+    @apply text-muted-foreground;
+  }
+}
+
+@layer utilities {
+  /* Fade in animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-32px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(32px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+  
+  .animate-slide-left {
+    animation: slideInLeft 0.8s ease-out forwards;
+  }
+  
+  .animate-slide-right {
+    animation: slideInRight 0.8s ease-out forwards;
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Kinetic typography */
+  .kinetic-text {
+    display: inline-block;
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+  
+  /* Base transitions */
+  .transition-base {
+    transition: all 0.3s ease;
+  }
+  
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+    
+    html {
+      scroll-behavior: auto;
+    }
+  }
+  
+  /* Container utilities */
+  .container-wide {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-narrow {
+    @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  /* Gradient overlays */
+  .gradient-overlay {
+    position: relative;
+  }
+  
+  .gradient-overlay::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 30%, hsl(199 89% 60% / 0.08), transparent 50%),
+                radial-gradient(circle at 70% 70%, hsl(199 89% 60% / 0.05), transparent 50%);
+    pointer-events: none;
+  }
+}
