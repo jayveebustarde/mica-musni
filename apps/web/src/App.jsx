@@ -141,15 +141,18 @@ function Navigation() {
 // Hero Section Component
 function HeroSection() {
   return (
-    <section id="hero" className="min-h-[100dvh] flex items-center gradient-overlay pt-20">
-      <div className="container-wide py-20">
+    <section
+      id="hero"
+      className="gradient-overlay pt-24 pb-12 lg:min-h-[100dvh] lg:flex lg:items-center"
+    >
+      <div className="container-wide py-6 md:py-10 lg:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Image Column */}
           <motion.div
             initial="hidden"
             animate="visible"
             variants={fadeInLeft}
-            className="order-2 lg:order-1"
+            className="hidden lg:block"
           >
             <div className="relative">
               <div className="absolute inset-0 bg-accent/20 rounded-2xl blur-3xl"></div>
@@ -167,7 +170,7 @@ function HeroSection() {
             initial="hidden"
             animate="visible"
             variants={fadeInRight}
-            className="order-1 lg:order-2 space-y-6"
+            className="space-y-6"
           >
             <div className="space-y-4">
               <Badge variant="outline" className="text-accent border-accent">
@@ -604,17 +607,15 @@ function EducationSection() {
       issuer: 'SGS Philippines Incorporated',
       date: 'Dec 2016',
       icon: Shield
-    },
-    {
-      name: 'Basic Occupational Safety and Health (BOSH)',
-      detail: 'Workplace safety and health training supporting operational compliance.',
-      issuer: 'White Cliff Health and Safety Services',
-      date: 'Jan 2017',
-      icon: Shield
     }
   ];
 
   const additionalTraining = [
+    {
+      name: 'Basic Occupational Safety and Health (BOSH)',
+      detail: 'Workplace safety and health training supporting operational compliance',
+      icon: Shield
+    },
     {
       name: 'Agile Project Management',
       detail: 'Project delivery and team coordination',
@@ -702,7 +703,7 @@ function EducationSection() {
                 Certifications that best reflect my work in process improvement, quality systems, and compliance support.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
               {featuredCertifications.map((item, index) => (
                 <motion.div key={index} variants={fadeInUp}>
                   <Card className="h-full border-accent/20 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
