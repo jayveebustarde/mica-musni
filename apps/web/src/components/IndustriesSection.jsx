@@ -3,6 +3,13 @@ import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import {
+  Zap,
+  Gamepad2,
+  Landmark,
+  UtensilsCrossed,
+  Cpu
+} from 'lucide-react';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 24 },
@@ -21,43 +28,43 @@ const staggerContainer = {
 
 const industries = [
   {
-    title: 'Automotive',
-    companies: ['Geely Europe Innovation', 'Toshiba'],
-    description: 'Driving quality assurance and process optimization in European automotive innovation centers.',
-    image: 'https://images.unsplash.com/photo-1694716061062-be39f971dac5',
-    alt: 'Modern automotive design and engineering concept with sleek vehicle lines',
-    colSpan: 'lg:col-span-3'
-  },
-  {
-    title: 'Gaming Software',
-    companies: ['Swooc Games'],
-    description: 'Establishing robust QA protocols and process documentation for digital entertainment.',
-    image: 'https://images.unsplash.com/photo-1683029096295-7680306aa37d',
-    alt: 'High-performance gaming setup with illuminated peripherals',
+    title: 'Automotive Shared Services',
+    companies: ['Geely Europe Innovation and Collaboration AB', 'Polestar', 'Zeekr', 'Lynk & Co'],
+    description: 'Supporting European automotive operations through shared service process and quality improvement across HR, IT, Finance, documentation governance, and QMS, EMS, and ISMS-related activities.',
+    icon: Zap,
+    gradient: 'from-blue-600 to-blue-900',
     colSpan: 'lg:col-span-3'
   },
   {
     title: 'Financial Services',
     companies: ['Wells Fargo'],
-    description: 'Leading cross-functional Six Sigma DMAIC projects to improve operational efficiency.',
-    image: 'https://images.unsplash.com/photo-1649734929640-d0c0f79da545',
-    alt: 'Abstract financial data visualization and market analysis charts',
+    description: 'Applying process engineering, change request governance, and stakeholder collaboration across international financial operations, business units, and onshore and offshore teams.',
+    icon: Landmark,
+    gradient: 'from-green-600 to-green-900',
+    colSpan: 'lg:col-span-3'
+  },
+  {
+    title: 'Gaming Software',
+    companies: ['Swooc Games'],
+    description: 'Improving business process documentation and organization through Asana, Slab, SOPs, and LucidChart in a global remote setup.',
+    icon: Gamepad2,
+    gradient: 'from-purple-600 to-purple-900',
     colSpan: 'lg:col-span-2'
   },
   {
     title: 'Food & Beverage',
     companies: ['Jollibee Foods'],
-    description: 'Implementing ISO 9001:2015 and HACCP systems across manufacturing facilities.',
-    image: 'https://images.unsplash.com/photo-1666564383040-4aacdd1b7ce9',
-    alt: 'Professional food production and quality control environment',
+    description: 'Leading restaurant systems initiatives, electronic shift management improvements, and nationwide operational guideline rollouts.',
+    icon: UtensilsCrossed,
+    gradient: 'from-amber-600 to-amber-900',
     colSpan: 'lg:col-span-2'
   },
   {
     title: 'Electronics Manufacturing',
     companies: ['Toshiba'],
-    description: 'Applying Lean manufacturing principles to reduce waste and optimize production lines.',
-    image: 'https://images.unsplash.com/photo-1677442135131-4d7c123aef1c',
-    alt: 'Precision electronic components and circuit board manufacturing',
+    description: 'Managing product qualifications, process quality checks, 8D analysis, and ISO-aligned manufacturing quality assurance.',
+    icon: Cpu,
+    gradient: 'from-slate-600 to-slate-900',
     colSpan: 'lg:col-span-2'
   }
 ];
@@ -91,14 +98,9 @@ export default function IndustriesSection() {
                 className={`group ${industry.colSpan}`}
               >
                 <Card className="h-full overflow-hidden border-border/50 bg-card/50 hover:bg-card transition-all duration-300 hover:shadow-lg hover:shadow-accent/5 hover:-translate-y-1 flex flex-col">
-                  <div className="relative h-48 overflow-hidden">
-                    <div className="absolute inset-0 bg-background/20 group-hover:bg-transparent transition-colors duration-300 z-10" />
-                    <img 
-                      src={industry.image} 
-                      alt={industry.alt}
-                      loading="lazy"
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
+                  <div className={`relative h-48 overflow-hidden bg-gradient-to-br ${industry.gradient} flex items-center justify-center group`}>
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300" />
+                    <industry.icon className="relative h-24 w-24 text-white/90 group-hover:text-white group-hover:scale-110 transition-all duration-300" aria-hidden="true" />
                   </div>
                   <CardHeader className="pb-4">
                     <CardTitle className="text-xl group-hover:text-accent transition-colors duration-300">

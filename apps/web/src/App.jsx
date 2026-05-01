@@ -155,7 +155,7 @@ function HeroSection() {
               <div className="absolute inset-0 bg-accent/20 rounded-2xl blur-3xl"></div>
               <img
                 src="/krezia-main.jpg"
-                alt="Professional portrait of Krezia Mica Musni, Process and Quality Engineer"
+                alt="Professional portrait of Krezia Mica Musni, Process Engineer"
                 loading="lazy"
                 className="relative rounded-2xl shadow-2xl w-full h-auto aspect-[3/4] object-cover object-[center_18%] md:object-center"
               />
@@ -171,7 +171,7 @@ function HeroSection() {
           >
             <div className="space-y-4">
               <Badge variant="outline" className="text-accent border-accent">
-                Available for Consulting
+                Certified Lean Six Sigma Green Belt
               </Badge>
               
               <h1 className="kinetic-text text-balance">
@@ -179,7 +179,7 @@ function HeroSection() {
               </h1>
               
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-accent text-balance">
-                Process & Quality Engineer
+                Process Engineer
               </h2>
               
               <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
@@ -195,7 +195,7 @@ function HeroSection() {
                   size="lg" 
                   className="group transition-all duration-200 hover:scale-105 active:scale-[0.98]"
                 >
-                  View Project Impact
+                  View Career Impact
                   <ChevronRight className="ml-2 h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
                 </Button>
               </a>
@@ -209,6 +209,17 @@ function HeroSection() {
                   Contact Me
                 </Button>
               </a>
+
+              <a href="/KreziaMicaMusni_2026.pdf" download="KreziaMicaMusni_2026.pdf">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="transition-all duration-200 hover:scale-105 active:scale-[0.98]"
+                >
+                  <FileText className="mr-2 h-4 w-4" aria-hidden="true" />
+                  Download CV
+                </Button>
+              </a>
             </div>
 
             <div className="pt-6 flex flex-wrap gap-6 text-sm text-muted-foreground">
@@ -218,7 +229,7 @@ function HeroSection() {
               </div>
               <div className="flex items-center gap-2">
                 <Briefcase className="h-4 w-4 text-accent" />
-                <span>Geely Europe Innovation</span>
+                <span>Geely Europe Innovation and Collaboration AB</span>
               </div>
             </div>
           </motion.div>
@@ -270,7 +281,7 @@ function ProfileSection() {
           >
             {[
               { icon: TrendingUp, label: 'Process Optimization', value: '10+ Years' },
-              { icon: Target, label: 'Quality Systems', value: 'ISO 9001/14001' },
+              { icon: Target, label: 'Quality & Environmental Systems', value: 'ISO 9001 / ISO 14001' },
               { icon: BarChart3, label: 'Continuous Improvement', value: 'Lean Six Sigma' }
             ].map((stat, index) => (
               <motion.div key={index} variants={fadeInUp}>
@@ -301,7 +312,13 @@ function ExperienceSection() {
       company: 'Geely Europe Innovation and Collaboration AB',
       location: 'Göteborg, Sweden',
       period: 'Oct 2025 – Present',
-      description: 'Led process and quality improvement initiatives across shared service functions, including HR, IT, and Finance. Developed a Document Management System (DMS) framework and supported QMS, EMS, and ISMS-related activities through structured documentation, governance practices, and process standardization. Designed and improved end-to-end processes to enhance accountability, service consistency, and process clarity. Mapped detailed process activities and developed process KPI structures to improve performance visibility, governance, and documentation quality. Supported SAP S/4HANA-related improvement initiatives, including dunning and order management, through requirements gathering and stakeholder alignment. Supported customer-facing and cross-functional improvement initiatives by acting as a key liaison between business users, operational teams, and stakeholders.',
+      highlights: [
+        'Led process and quality improvement initiatives across HR, IT, Finance, and other shared service functions.',
+        'Developed a Document Management System framework and supported QMS, EMS, and ISMS activities through stronger governance and documentation.',
+        'Redesigned end-to-end processes and KPI structures to improve accountability, service consistency, and performance visibility.',
+        'Supported SAP S/4HANA improvement work, including dunning and order management, through requirements gathering and stakeholder alignment.',
+        'Acted as a key liaison between business users, operational teams, and stakeholders on cross-functional improvement initiatives.'
+      ],
       current: true
     },
     {
@@ -309,7 +326,13 @@ function ExperienceSection() {
       company: 'Swooc Games',
       location: 'Florida, USA',
       period: 'Jun 2022 – Mar 2024',
-      description: 'Overhauled the company\'s key process documentation and overall organization of processes via Asana, Slab, SOPs, and LucidChart as part of delivering high-quality solutions and driving continuous improvement. Worked closely with remote personnel and internal stakeholders from different time zones and multicultural backgrounds exhibiting flexibility and effectiveness in a global remote setup. Developed project plans and process improvements which contributed directly to increasing the efficiency of the company\'s business processes. Acted as point person for presentation and coordination of process improvement solutions for staff and internal stakeholders. Proactively used the DMAIC process principles as a standard for process initiatives.',
+      highlights: [
+        'Overhauled process documentation and process organization using Asana, Slab, SOPs, and Lucidchart.',
+        'Developed project plans and improvement initiatives that increased business process efficiency.',
+        'Served as the point person for presenting and coordinating process improvement solutions with staff and internal stakeholders.',
+        'Worked effectively across time zones and multicultural teams in a fully remote environment.',
+        'Applied DMAIC principles as the standard framework for process initiatives.'
+      ],
       current: false
     },
     {
@@ -317,7 +340,13 @@ function ExperienceSection() {
       company: 'Wells Fargo Philippines',
       location: 'Philippines',
       period: 'Jan 2021 – Jun 2022',
-      description: 'Applied foundational process engineering tools such as SIPOC, Customer Focus, Lean/Six Sigma principles, Process Mapping, and Fishbone diagrams to enhance processes for teams, departments, and business units. Maintained a consistent First Time Right status with 100% accuracy on all assigned change requests while supporting multiple onshore/offshore teams simultaneously. Collaborated with multicultural teams and business subject matter experts in India and USA while maintaining high SLA on all change requests output. Heavily involved in gathering process requirements, identifying gaps and efficiency opportunities, and creating recommendations based on analyses and process improvement ideas. Utilized iGrafx and OpenText in creating and documenting procedures, changes in process flow and attributes.',
+      highlights: [
+        'Applied SIPOC, Lean Six Sigma, process mapping, and Fishbone analysis to improve processes across teams and business units.',
+        'Maintained 100% First Time Right accuracy on assigned change requests while supporting multiple onshore and offshore teams.',
+        'Partnered with subject matter experts in India and the USA while sustaining strong SLA performance.',
+        'Gathered process requirements, identified gaps, and developed recommendations based on analysis and improvement opportunities.',
+        'Used iGrafx and OpenText to document procedures, process flows, and attribute changes.'
+      ],
       current: false
     },
     {
@@ -325,7 +354,13 @@ function ExperienceSection() {
       company: 'Jollibee Foods Corporation',
       location: 'Philippines',
       period: 'Jun 2019 – Sept 2020',
-      description: 'Spearheaded the Greenwich systemwide store Restaurant Operating System completion from 56% to 100%. Project lead of electronic shift management that reduced around 70% the Takt time of admin tasks. Led the planning and implementation of Covid-19 safety measures and guidelines coordinated with all Greenwich stores nationwide. Responsible for the full lifecycle of new systems: evaluation of emerging customer service models, pilot tests, post-implementation evaluations, and system-wide implementation. Maintained detailed project plans and documentation of policies and procedures for implemented systems.',
+      highlights: [
+        'Spearheaded the Greenwich Restaurant Operating System rollout from 56% completion to 100% systemwide.',
+        'Led an electronic shift management project that reduced admin task takt time by around 70%.',
+        'Coordinated the planning and implementation of Covid-19 safety measures across Greenwich stores nationwide.',
+        'Managed the full lifecycle of new systems, from evaluation and pilot testing to post-implementation review and rollout.',
+        'Maintained detailed project plans, policies, and procedures for implemented systems.'
+      ],
       current: false
     },
     {
@@ -333,7 +368,13 @@ function ExperienceSection() {
       company: 'Toshiba Information Equipment (PH), Inc.',
       location: 'Philippines',
       period: 'Jun 2015 – Feb 2019',
-      description: 'Ensured all work processes comply with ISO9001:2000, SA8000, and ISO14001; regularly participated in 5S activities and OHSA programs. Oversaw product qualifications and process changes including 5M1E according to quality standards. Spearheaded the 8D analysis for quality claims and investigation of in-line quality issues. Conducted Process Quality Checks including manufacturing compliance, contamination process, ESD process, and SOP/work procedure checks. Supervised defect analysis during inspection to identify and prevent NG units from continuing to the next process.',
+      highlights: [
+        'Ensured compliance with ISO9001:2000, SA8000, and ISO14001 standards while supporting 5S and OHSA programs.',
+        'Oversaw product qualifications and 5M1E-related process changes according to quality requirements.',
+        'Led 8D analysis for quality claims and in-line quality issue investigations.',
+        'Conducted process quality checks covering manufacturing compliance, contamination control, ESD, and SOP adherence.',
+        'Supervised defect analysis to prevent non-conforming units from progressing to the next process.'
+      ],
       current: false
     }
   ];
@@ -396,9 +437,17 @@ function ExperienceSection() {
                           <p className="text-sm text-muted-foreground">{exp.period}</p>
                         </CardHeader>
                         <CardContent>
-                          <p className="text-muted-foreground leading-relaxed">
-                            {exp.description}
-                          </p>
+                          <ul className="space-y-3">
+                            {exp.highlights.map((highlight, highlightIndex) => (
+                              <li
+                                key={highlightIndex}
+                                className="flex items-start gap-3 text-muted-foreground leading-relaxed"
+                              >
+                                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-accent" aria-hidden="true" />
+                                <span>{highlight}</span>
+                              </li>
+                            ))}
+                          </ul>
                         </CardContent>
                       </Card>
                     </div>
@@ -425,8 +474,11 @@ function SkillsSection() {
     { name: 'Lean Six Sigma DMAIC', icon: TrendingUp },
     { name: 'ISO 9001:2015', icon: Shield },
     { name: 'ISO 14001:2015', icon: CheckCircle2 },
+    { name: 'Basic Occupational Safety and Health', icon: Shield },
     { name: 'FMEA Analysis', icon: Target },
     { name: '8D Problem Solving', icon: Zap },
+    { name: 'Why-Why Analysis', icon: BarChart3 },
+    { name: 'PDC', icon: CheckCircle2 },
     { name: 'Root Cause Analysis', icon: BarChart3 }
   ];
 
@@ -437,8 +489,7 @@ function SkillsSection() {
     { name: 'Confluence', icon: FileText },
     { name: 'Trello', icon: BarChart3 },
     { name: 'SharePoint', icon: TrendingUp },
-    { name: 'Spotfire DXP', icon: BarChart3 },
-    { name: 'SAP S/4HANA', icon: Database }
+    { name: 'Spotfire DXP', icon: BarChart3 }
   ];
 
   return (
@@ -526,23 +577,78 @@ function EducationSection() {
     {
       degree: 'Bachelor of Science in Industrial Engineering',
       institution: 'Polytechnic University of the Philippines',
-      location: 'Manila, Philippines',
-      year: '2010-2015',
+      location: 'Sto. Tomas, Batangas, Philippines',
+      year: '2010 – 2015',
       icon: GraduationCap
-    },
+    }
+  ];
+
+  const featuredCertifications = [
     {
-      degree: 'Lean Six Sigma Green Belt Certification',
-      institution: 'International Association for Six Sigma Certification',
-      location: 'International',
-      year: '2018',
+      name: 'Lean Six Sigma Green Belt',
+      detail: 'Continuous improvement credential focused on DMAIC and structured problem solving.',
+      issuer: 'Wells Fargo',
+      date: 'Dec 2021',
       icon: Award
     },
     {
-      degree: 'ISO 9001:2015 Internal Auditor Training',
-      institution: 'TÜV SÜD Academy',
-      location: 'Europe',
-      year: '2020',
+      name: 'ISO 9001:2015 Internal Auditor Training',
+      detail: 'Internal auditor training for quality systems, process risk, and performance-based improvement.',
+      issuer: 'Neville Clarke Philippines',
+      date: 'Jul 2017',
       icon: Shield
+    },
+    {
+      name: 'ISO 14001:2015 EMS Internal Audit Course',
+      detail: 'Environmental management systems auditing and compliance support.',
+      issuer: 'SGS Philippines Incorporated',
+      date: 'Dec 2016',
+      icon: Shield
+    },
+    {
+      name: 'Basic Occupational Safety and Health (BOSH)',
+      detail: 'Workplace safety and health training supporting operational compliance.',
+      issuer: 'White Cliff Health and Safety Services',
+      date: 'Jan 2017',
+      icon: Shield
+    }
+  ];
+
+  const additionalTraining = [
+    {
+      name: 'Agile Project Management',
+      detail: 'Project delivery and team coordination',
+      icon: Target
+    },
+    {
+      name: 'Effective Management of Corrective Action',
+      detail: 'Corrective action and follow-through',
+      icon: CheckCircle2
+    },
+    {
+      name: 'Effective Root Cause Analysis',
+      detail: 'Structured root cause investigation',
+      icon: BarChart3
+    },
+    {
+      name: 'Management Innovation Training',
+      detail: 'Six Sigma methodology',
+      icon: TrendingUp
+    },
+    {
+      name: 'Why-Why Analysis Training',
+      detail: 'Problem-solving methodology',
+      icon: Zap
+    },
+    {
+      name: 'Failure Mode, Effect and Analysis',
+      detail: 'FMEA',
+      icon: Target
+    },
+    {
+      name: 'Innovative Thinking System',
+      detail: 'Creative problem solving',
+      icon: Award
     }
   ];
 
@@ -563,7 +669,7 @@ function EducationSection() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 gap-6">
             {education.map((item, index) => (
               <motion.div key={index} variants={fadeInUp}>
                 <Card className="h-full hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
@@ -588,6 +694,71 @@ function EducationSection() {
               </motion.div>
             ))}
           </div>
+
+          <motion.div variants={fadeInUp} className="space-y-6">
+            <div className="text-center space-y-3">
+              <h3 className="text-center text-balance">Featured Certifications</h3>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Certifications that best reflect my work in process improvement, quality systems, and compliance support.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {featuredCertifications.map((item, index) => (
+                <motion.div key={index} variants={fadeInUp}>
+                  <Card className="h-full border-accent/20 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                    <CardHeader>
+                      <div className="flex items-start gap-4">
+                        <div className="p-3 rounded-lg bg-accent/10 shrink-0">
+                          <item.icon className="h-6 w-6 text-accent" aria-hidden="true" />
+                        </div>
+                        <div className="space-y-2">
+                          <CardTitle className="text-lg leading-tight">
+                            {item.name}
+                          </CardTitle>
+                          <p className="text-sm text-muted-foreground">
+                            {item.issuer} • {item.date}
+                          </p>
+                        </div>
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{item.detail}</p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div variants={fadeInUp} className="space-y-6">
+            <div className="text-center space-y-3">
+              <h3 className="text-center text-balance">Additional Training</h3>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Supporting training in project delivery, corrective action, and structured problem solving.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {additionalTraining.map((item, index) => (
+                <motion.div key={index} variants={fadeInUp}>
+                  <Card className="h-full hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                    <CardHeader>
+                      <div className="flex items-start gap-4">
+                        <div className="p-3 rounded-lg bg-accent/10 shrink-0">
+                          <item.icon className="h-6 w-6 text-accent" aria-hidden="true" />
+                        </div>
+                        <div className="space-y-2">
+                          <CardTitle className="text-lg leading-tight">
+                            {item.name}
+                          </CardTitle>
+                          <p className="text-sm text-muted-foreground">{item.detail}</p>
+                        </div>
+                      </div>
+                    </CardHeader>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </AnimatedSection>
@@ -618,7 +789,7 @@ function ContactFooter() {
           <div className="text-center space-y-6">
             <h2 className="text-balance">Let's Connect</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Open to consulting opportunities and quality engineering collaborations
+              Based in Göteborg, Sweden, with experience across process improvement, quality management, and business operations
             </p>
           </div>
 
@@ -702,7 +873,7 @@ function App() {
   return (
     <>
       <Helmet>
-        <title>Krezia Mica Musni | Process & Quality Engineer | 10+ Years Experience</title>
+        <title>Krezia Mica Musni | Process Engineer | 10+ Years Experience</title>
         <meta 
           name="description" 
           content="Professional portfolio of Krezia Mica Musni - Certified Lean Six Sigma Green Belt with 10+ years of international experience in process optimization, quality management, and industrial engineering across Europe and Asia."
