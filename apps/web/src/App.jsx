@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet';
 import { motion, useInView } from 'framer-motion';
 import { 
   Award, Briefcase, Code, Database, FileText, GraduationCap, 
-  Mail, MapPin, Phone, ChevronRight, ExternalLink, 
+  Mail, MapPin, ChevronRight, ExternalLink, 
   CheckCircle2, TrendingUp, Target, BarChart3, Settings,
   Shield, Zap, ArrowUp
 } from 'lucide-react';
@@ -311,7 +311,7 @@ function ExperienceSection() {
 
   const experiences = [
     {
-      role: 'Process & Quality Consultant',
+      role: 'Process & Quality Manager',
       company: 'Geely Europe Innovation and Collaboration AB',
       location: 'Göteborg, Sweden',
       period: 'Oct 2025 – Present',
@@ -400,8 +400,8 @@ function ExperienceSection() {
           </motion.div>
 
           <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-border md:-translate-x-px"></div>
+            {/* Timeline line (fixed to left) */}
+            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-border -translate-x-px"></div>
 
             <div className="space-y-12">
               {experiences.map((exp, index) => (
@@ -410,18 +410,16 @@ function ExperienceSection() {
                   variants={fadeInUp}
                   className="relative"
                 >
-                  <div className={`flex flex-col md:flex-row gap-8 ${
-                    index % 2 === 0 ? 'md:flex-row-reverse' : ''
-                  }`}>
+                  <div className="flex flex-col md:flex-row gap-8">
                     {/* Timeline node */}
-                    <div className="absolute left-8 md:left-1/2 w-4 h-4 rounded-full bg-accent border-4 border-background md:-translate-x-1/2 flex items-center justify-center">
+                    <div className="absolute left-8 w-4 h-4 rounded-full bg-accent border-4 border-background -translate-x-1/2 flex items-center justify-center">
                       {exp.current && (
                         <div className="absolute w-8 h-8 rounded-full bg-accent/20 animate-ping"></div>
                       )}
                     </div>
 
-                    {/* Content */}
-                    <div className="md:w-1/2 pl-20 md:pl-0">
+                    {/* Content (full width, padded to clear the timeline) */}
+                    <div className="w-full pl-20">
                       <Card className={`hover:shadow-lg transition-all duration-300 hover:-translate-y-1 ${
                         exp.current ? 'border-accent' : ''
                       }`}>
@@ -455,8 +453,7 @@ function ExperienceSection() {
                       </Card>
                     </div>
 
-                    {/* Spacer for alternating layout */}
-                    <div className="hidden md:block md:w-1/2"></div>
+                    {/* spacer removed — cards occupy full width */}
                   </div>
                 </motion.div>
               ))}
@@ -812,14 +809,16 @@ function ContactFooter() {
 
                 <div className="space-y-2">
                   <div className="flex items-center justify-center md:justify-start gap-2 text-accent">
-                    <Phone className="h-5 w-5" aria-hidden="true" />
-                    <span className="font-semibold">Phone</span>
+                    <ExternalLink className="h-5 w-5" aria-hidden="true" />
+                    <span className="font-semibold">LinkedIn</span>
                   </div>
                   <a
-                    href="tel:+46701493241"
+                    href="https://www.linkedin.com/in/kreziamicamusni/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="block text-muted-foreground hover:text-accent transition-colors duration-200"
                   >
-                    070-149 32 41
+                    linkedin.com/in/kreziamicamusni
                   </a>
                 </div>
 

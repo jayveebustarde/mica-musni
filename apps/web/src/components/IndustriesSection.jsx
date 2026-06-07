@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import {
   Zap,
+  Globe,
   Gamepad2,
   Landmark,
   UtensilsCrossed,
@@ -28,10 +29,10 @@ const staggerContainer = {
 
 const industries = [
   {
-    title: 'Automotive Shared Services',
-    companies: ['Geely Europe Innovation and Collaboration AB', 'Polestar', 'Zeekr', 'Lynk & Co'],
-    description: 'Supporting European automotive operations through shared service process and quality improvement across HR, IT, Finance, documentation governance, and QMS, EMS, and ISMS-related activities.',
-    icon: Zap,
+    title: 'Global Shared Services',
+    companies: ['Geely Europe Innovation and Collaboration', 'Wells Fargo'],
+    description: 'Supporting global companies with structured shared services—standardising processes, governance, and operational support across HR, IT, Finance, and management systems (QMS/EMS/ISMS) to ensure consistent service delivery and measurable performance.',
+    icon: Globe,
     gradient: 'from-blue-600 to-blue-900',
     colSpan: 'lg:col-span-3'
   },
